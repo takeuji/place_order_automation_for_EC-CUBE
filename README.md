@@ -14,3 +14,5 @@ $ node order_by_non_member.js
 ```
 
 こんな感じで実行されます。
+
+![image](https://user-images.githubusercontent.com/8424850/68849145-e02ce380-0714-11ea-9042-33d7486809bd.gif)
