@@ -70,19 +70,15 @@ var selectCombo = function* (nightmare, selector) {
   yield nightmare
     .evaluate(selector => {
       let vals = [];
-      let obj = document.querySelector(selector);
-      if (obj) {
-        for(var option of obj.options) {
-          if (option.value != '__unselected') {
-            vals.push(option.value);
-          }
-        }
+      let options = document.querySelector(selector);
+      if (options) {
+        vals = Array.from(options).map(option => option.value);
       }
       return vals;
     }, selector)
     .then((vals) => {
       if (vals) {
-        select = vals[getRandomNumber(0, vals.length - 1)];
+        select = vals[getRandomNumber(1, vals.length - 1)];
       }
     });
   if (select) {
